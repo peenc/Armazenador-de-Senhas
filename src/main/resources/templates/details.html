@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmls:th="http://thymeleaf.org" xmls.layout="http://www.utraq.net.nz/thymeleaf/layourt">
+
+<head>
+	<title>SenhasApp</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="style/styleCss.css"/>
+</head>
+
+<body>
+
+	<header>
+
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Pessoa</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/pessoas" class="waves-effect waves-light btn"><i
+								class="material-icons left">add_circle_outline</i>Voltar à lista de Pessoas</a></li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<div th:each="pessoa : ${pessoa}" class="container detalhesPessoa">
+		<div class="row">
+			<p>Nome: <span th:text="${pessoa.nome}"></span></p>
+		</div>
+	</div>
+		<div class="container formPessoa">
+		<form method="post" th:object="${senha}">
+			Local:<input type="text" value="" name="local" placeholder="Digite o local" />
+			Conta:<input type="text" value="" name="conta" placeholder="Digite o usuário" />
+			Senha:<input type="text" value="" name="acesso" placeholder="Digite a senha - Mínimo 8 caracteres" />
+			<th:block th:include="validation"></th:block>
+			<button class="waves-effect waves-light btn " type="submit">Adicionar</button>
+		</form>
+		</div>
+	<table class="container tabelaSenhas">
+		<thead>
+			<tr>
+				<th>Local</th>
+				<th>Conta</th>
+				<th>Senha</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="senha :${senhas}">
+			<td><span th:text="${senha.local}"></span></td>
+			<td><span th:text="${senha.conta}"></span></td>
+			<td><span th:text="${senha.acesso}"></span></td>
+			<td><a class="waves-effect waves-light btn-small"
+								th:href="${(#mvc.url('PC#deletarSenha').arg(0, senha.id)).build()}"><i
+				class="material-icons left">delete_forever</i>Deletar</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+
+</html>

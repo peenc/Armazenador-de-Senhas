@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmls:th="http://thymeleaf.org" xmls.layout="http://www.utraq.net.nz/thymeleaf/layourt">
+
+<head>
+	<title>SenhasApp</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style/styleCss.css"/>
+</head>
+
+<header>
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Pessoas Cadastradas</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="/cadastrarpessoa" class="waves-effect waves-light btn"><i
+				class="material-icons left">add_circle_outline</i>Cadastrar Pessoa </a></li>
+			</ul>
+		</div>
+	</nav>
+
+</header>
+
+<body>
+
+	<table class="container">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr th:each="pessoa : ${pessoas}">
+
+				<td><span th:text="${pessoa.nome}"></span></td>
+				<td><a class="input-field col s10"><a class="waves-effect waves-light btn-small"
+								th:href="${(#mvc.url('PC#detalhesPessoa').arg(0, pessoa.id)).build()}">Detalhes</a></td>
+				<td><a class="waves-effect waves-light btn-small"
+								th:href="${(#mvc.url('PC#deletarPessoa').arg(0, pessoa.id)).build()}"><i
+				class="material-icons left">delete_forever</i>Deletar</a></td>
+				
+
+			</tr>
+			<th:block th:insert="validation"></th:block>
+
+
+		</tbody>
+
+	</table>
+
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+
+</html>
