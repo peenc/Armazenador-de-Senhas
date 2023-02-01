@@ -11,7 +11,8 @@ target/
 .project
 .settings
 .springBeans
-.sts4-cache
+.sts4-cach
+.apache-tomcat-10.0.23
 
 ### IntelliJ IDEA ###
 .idea
@@ -31,3 +32,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+
