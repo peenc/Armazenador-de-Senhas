@@ -28,16 +28,12 @@ public class SenhaService {
 	}
 
 	public Senha update(Long idSenha, Senha obj) {
-		// Pessoa pessoa = service.findById(idpessoa);
-		// List<Senha> lista = pessoa.getSenhas();
-		// for (Senha senha : lista) {
-		// if (senha.getId() == idSenha) {
+
 		Optional<Senha> senha = repository.findById(idSenha);
 		Senha senhaNova = senha.orElseThrow();
 		updateData(senhaNova, obj);
+		embaralhaSenha(senhaNova);
 		return repository.save(senhaNova);
-		// }
-		// }
 
 	}
 
@@ -50,7 +46,7 @@ public class SenhaService {
 		return repository.findByPessoa(pessoa);
 	}
 
-	private void updateData(Senha entity, Senha obj) {
+	public void updateData(Senha entity, Senha obj) {
 		entity.setAcesso(obj.getAcesso());
 	}
 

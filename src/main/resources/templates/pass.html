@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmls:th="http://thymeleaf.org" xmls.layout="http://www.utraq.net.nz/thymeleaf/layourt">
+
+<head>
+	<title>SenhasApp</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style/styleCss.css" />
+</head>
+
+<header>
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Senha</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<button class="waves-effect waves-light btn" type="button"
+					onclick="javascript:history.back()">Voltar</button>
+			</ul>
+		</div>
+	</nav>
+
+
+</header>
+
+<body>
+
+
+
+	<div th:each="pass : ${senha}" class="container">
+		<div class="row">
+			<p>Senha Atual: <span th:text="${pass.acesso}"></span></p>
+		</div>
+
+	</div>
+	<div class="container ">
+		<form method="post" th:object="${senha}">
+			
+			Redefinir senha: <input type="text" value="" name="acesso" placeholder="Digite a senha - Mínimo 8 caracteres" />
+			<th:block th:insert="validation"></th:block>
+			<button class="waves-effect waves-light btn " type="submit">Atualizar</button>
+		</form>
+
+
+	</div>
+
+
+
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+
+</body>
+
+</html>
