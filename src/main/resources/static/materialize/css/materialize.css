@@ -2793,11 +2793,11 @@ video.responsive-video {
 }
 
 .breadcrumb:before {
-  content: '\E5CC';
+  content: \E5CC;
   color: rgba(255, 255, 255, 0.7);
   vertical-align: top;
   display: inline-block;
-  font-family: 'Material Icons';
+  font-family: Material Icons;
   font-weight: normal;
   font-style: normal;
   font-size: 25px;
@@ -3027,7 +3027,7 @@ td, th {
     /* sort out borders */
   }
   table.responsive-table td:empty:before {
-    content: '\00a0';
+    content: \00a0;
   }
   table.responsive-table th,
   table.responsive-table td {
@@ -3222,7 +3222,7 @@ td, th {
 }
 
 .progress .indeterminate:before {
-  content: '';
+  content: ;
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -3234,7 +3234,7 @@ td, th {
 }
 
 .progress .indeterminate:after {
-  content: '';
+  content: ;
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -3423,9 +3423,9 @@ table span.badge {
 /* This is needed for some mobile phones to display the Google Icon font properly */
 .material-icons {
   text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: 'liga';
-     -moz-font-feature-settings: 'liga';
-          font-feature-settings: 'liga';
+  -webkit-font-feature-settings: liga;
+     -moz-font-feature-settings: liga;
+          font-feature-settings: liga;
 }
 
 .container {
@@ -6690,7 +6690,7 @@ textarea.materialize-textarea {
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  /* future version of deprecated 'word-wrap' */
+  /* future version of deprecated word-wrap */
   padding-top: 1.2rem;
   /* prevents text jump on Enter keypress */
   position: absolute;
@@ -6742,7 +6742,7 @@ textarea.materialize-textarea {
 
 [type="radio"] + span:before,
 [type="radio"] + span:after {
-  content: '';
+  content: ;
   position: absolute;
   left: 0;
   top: 0;
@@ -6867,7 +6867,7 @@ textarea.materialize-textarea {
 
 [type="checkbox"] + span:not(.lever):before,
 [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
-  content: '';
+  content: ;
   position: absolute;
   top: 0;
   left: 0;
@@ -6953,7 +6953,7 @@ textarea.materialize-textarea {
 
 [type="checkbox"].filled-in + span:not(.lever):before,
 [type="checkbox"].filled-in + span:not(.lever):after {
-  content: '';
+  content: ;
   left: 0;
   position: absolute;
   /* .1s delay is for check animation */
@@ -7771,7 +7771,7 @@ input[type=range]::-ms-thumb {
  *      ARCTIME     = 1333ms (time it takes to expand and contract arc)
  *      ARCSTARTROT = 216 degrees (how much the start location of the arc
  *                                should rotate each time, 216 gives us a
- *                                5 pointed star shape (it's 360/5 * 3).
+ *                                5 pointed star shape (its 360/5 * 3).
  *                                For a 7 pointed star, we might do
  *                                360/7 * 3 = 154.286)
  *      CONTAINERWIDTH = 28px
@@ -7844,7 +7844,7 @@ input[type=range]::-ms-thumb {
 /**
  * IMPORTANT NOTE ABOUT CSS ANIMATION PROPERTIES (keanulee):
  *
- * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesn't
+ * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesnt
  * guarantee that the animation will start _exactly_ after that value. So we avoid using
  * animation-delay and instead set custom keyframes for each color (as redundant as it
  * seems).
@@ -8486,10 +8486,19 @@ input[type=range]::-ms-thumb {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
-  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility 0s 1s;
-  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
+  -webkit-transition: opacity .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s,
+ -webkit-transform .3s;
 }
 
 .tap-target {
@@ -8522,7 +8531,7 @@ input[type=range]::-ms-thumb {
 }
 
 .tap-target-wave::before, .tap-target-wave::after {
-  content: '';
+  content: ;
   display: block;
   position: absolute;
   width: 100%;
@@ -8542,10 +8551,19 @@ input[type=range]::-ms-thumb {
 
 .tap-target-wave::after {
   visibility: hidden;
-  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
-  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
-  transition: opacity .3s, transform .3s, visibility 0s;
-  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
+  -webkit-transition: opacity .3s,
+ visibility 0s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ visibility 0s,
+ -webkit-transform .3s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s;
+  transition: opacity .3s,
+ transform .3s,
+ visibility 0s,
+ -webkit-transform .3s;
   z-index: -1;
 }
 
@@ -8575,7 +8593,7 @@ input[type=range]::-ms-thumb {
 }
 
 .pulse::before {
-  content: '';
+  content: ;
   display: block;
   position: absolute;
   width: 100%;

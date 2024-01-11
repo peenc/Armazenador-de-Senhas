@@ -11,19 +11,18 @@
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<link rel="stylesheet" href="style/styleCss.css"/>
+	<link type="text/css" rel="stylesheet" href="style/style.css"/>
 </head>
 
-<body>
+<body class="corpo">
 
 <header>
 
-	<nav>
+	<nav class= "navbar">
 		<div class="nav-wrapper">
-			<a href="#" class="brand-logo">Cadastro de Pessoas:</a>
+			<a href="#" class="brand-logo">Cadastro de Pessoas</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="/pessoas" class="waves-effect waves-light btn"><i
-				class="material-icons left">format_list_bulleted</i>Voltar à lista de pessoas</a></li>
+			
 			</ul>
 		</div>
 	</nav>
@@ -34,8 +33,9 @@
 	<form class="container formPessoa" method="post">
 		Nome:<input type="text" value="" name="nome" placeholder="Digite o nome completo"  />
 	<th:block th:include="validation"></th:block>
-		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
-
+		<button class="btn" type="submit"><i class="material-icons left">check</i> Salvar</button>
+	<a href="/pessoas" class="btn"><i
+				class="material-icons left">clear</i>Voltar</a>
 	</form>
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 

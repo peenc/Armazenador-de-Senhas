@@ -1,0 +1,93 @@
+.detalhesPessoa{
+	box-shadow: 0px 0px 20px grey;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-bottom: 60px;
+	background-color:rgb(128, 128, 128);
+}
+
+.formPessoa{
+	color:white;
+	box-shadow: 0px 0px 20px rgb(74, 74, 74);
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+	margin-bottom: 60px;
+	font-family: Verdana;
+	opacity: 90%;
+}
+
+.tabelaSenhas{
+	width: 10%;
+}
+
+.errorCampo{
+	color:white;
+	text-shadow: 1px 1px 1px rgb(0, 0, 64);
+	padding-bottom: 10px;	
+	font-size: large;
+
+}
+.corpo{
+	
+	background-color: rgb(128, 128, 128);
+}
+
+.navbar{
+	background-color:rgb(74, 74, 74);
+	box-shadow: 0px 4px 6px rgba(1,1,1,1.5);
+
+}
+
+.nav-wrapper{
+	text-align:center;
+	margin-right: 20%;
+
+}
+
+.brand-logo{
+	
+	font-size: xlarge;
+	font-family: Verdana;
+}
+
+.btn{
+	background-color: rgb(128, 128, 128);
+	color:rgb(255, 255, 255);
+	border-radius: 20px;
+	box-shadow: 5px 2px 4px rgba(0,1,1,1,1); ;
+
+
+}
+
+.container{
+	margin-top: 4%;
+	box-shadow: 5px 2px 4px rgba(1,1,1,1); ;
+	border-radius: 20px;
+	background-color: rgb(74, 74, 74);
+	position:relative;
+}
+.cadastrar{
+	
+	margin-left: 72%;
+	position:relative;
+	margin-top: 1%;
+}
+.posição-nome{
+	padding-left:5% ;
+	font-family:Verdana;
+	font-size: x-large;
+	color:white;
+}
+
+.row{
+	font-size: xx-large;
+	color: white;
+}
+.row-pass{
+	font:message-box
+	}
+.mask{
+	text-transform:uppercase;
+	font-style: oblique;
+}

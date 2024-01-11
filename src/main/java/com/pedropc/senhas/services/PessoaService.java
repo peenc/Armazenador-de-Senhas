@@ -52,5 +52,9 @@ public class PessoaService {
 		repository.deleteById(id);
 		
 	}
+	
+	public void delete(Pessoa obj) {
+		repository.delete(obj);
+	}
 
 }

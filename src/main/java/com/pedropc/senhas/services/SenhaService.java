@@ -40,6 +40,10 @@ public class SenhaService {
 	public void deleteById(Long id) {
 		repository.deleteById(id);
 	}
+	
+	public void delete(Senha obj) {
+		repository.delete(obj);
+	}
 
 	public Iterable<Senha> findByPessoa(Pessoa pessoa) {
 

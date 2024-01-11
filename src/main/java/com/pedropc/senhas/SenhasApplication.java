@@ -14,6 +14,7 @@ public class SenhasApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
 		SpringApplication.run(SenhasApplication.class, args);
+		
 	}
 
 }

@@ -13,14 +13,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pedropc.senhas.models.Pessoa;
 import com.pedropc.senhas.models.Senha;
-import com.pedropc.senhas.repositories.SenhaRepository;
 import com.pedropc.senhas.services.SenhaService;
 
 @Controller
 public class SenhaController {
-
-	@Autowired
-	SenhaRepository repository2;
 
 	@Autowired
 	SenhaService senhaService;
@@ -45,8 +41,7 @@ public class SenhaController {
 		return "redirect:/{id}";
 	}
 	
-	
-	@RequestMapping(value = "/editar/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/editar", method = RequestMethod.GET)
 	public ModelAndView updateFormSenha(@PathVariable("id") Long id) {
 		ModelAndView mv = new ModelAndView("pass");
 
@@ -57,7 +52,7 @@ public class SenhaController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/editar/{id}", method = RequestMethod.POST)
+	@RequestMapping(value = "/{id}/editar", method = RequestMethod.POST)
 	public String atualizarSenha(@PathVariable("id") Long id, @Valid Senha senha, BindingResult result,
 			RedirectAttributes attributes) {
 
@@ -69,19 +64,19 @@ public class SenhaController {
 
 		if (senha.getAcesso() == "") {
 			attributes.addFlashAttribute("mensagem", "Preencha o campo!");
-			return "redirect:/editar/{id}";
+			return "redirect:/{id}/editar";
 		}
 
 		senhaService.update(id, senha);
 		attributes.addFlashAttribute("mensagem", "Senha Atualizada");
-		return "redirect:/" + idString;
+		return "redirect:/{id}/editar";
 
 	}
-
-	@RequestMapping("/deletarSenha")
-	public String deletarSenha(Long id) {
+	
+	@RequestMapping("/{id}/deletarSenha")
+	public String deletarSenha(@PathVariable("id") Long id) {
 		Senha senha = senhaService.findById(id);
-		repository2.delete(senha);
+		senhaService.delete(senha);
 
 		Pessoa pessoa = senha.getPessoa();
 		Long idLong = pessoa.getId();

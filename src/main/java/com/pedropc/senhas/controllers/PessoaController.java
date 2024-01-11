@@ -17,7 +17,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pedropc.senhas.models.Pessoa;
 import com.pedropc.senhas.models.Senha;
-import com.pedropc.senhas.repositories.PessoaRepository;
 import com.pedropc.senhas.services.PessoaService;
 import com.pedropc.senhas.services.SenhaService;
 
@@ -25,20 +24,16 @@ import com.pedropc.senhas.services.SenhaService;
 public class PessoaController {
 
 	@Autowired
-	PessoaRepository repository;
-	
-	@Autowired
 	SenhaService senhaService;
-
 
 	@Autowired
 	PessoaService pessoaService;
-
+	
 	@GetMapping(value = "/cadastrarpessoa")
 	public String form() {
 		return "form";
 	}
-
+	
 	@PostMapping(value = "/cadastrarpessoa")
 	public String form(@Valid Pessoa pessoa, BindingResult result, RedirectAttributes attributes) {
 		if (pessoa.getNome() == "") {
@@ -61,7 +56,7 @@ public class PessoaController {
 		mv.addObject("pessoas", pessoas);
 		return mv;
 	}
-
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView detalhesPessoa(@PathVariable("id") Long id) {
 		Pessoa pessoa = pessoaService.findById(id);
@@ -72,7 +67,6 @@ public class PessoaController {
 		mv.addObject("senhas", senhas);
 		return mv;
 	}
-	
 	@RequestMapping("/deletar")
 	public String deletarPessoa(long id, RedirectAttributes attributes) {
 		Pessoa pessoa = pessoaService.findById(id);
@@ -81,13 +75,8 @@ public class PessoaController {
 			attributes.addFlashAttribute("mensagem", "Não é possível deleta-la");
 			return "redirect:/pessoas";
 		} else
-			repository.delete(pessoa);
+			pessoaService.delete(pessoa);
 		return "redirect:/pessoas";
 	}
 
-	
-
-	
-
-	
 }
